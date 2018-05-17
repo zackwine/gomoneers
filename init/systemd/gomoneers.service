@@ -1,0 +1,13 @@
+[Unit]
+Description=Control gomoneer service
+
+[Service]
+Type=simple
+ExecStart=/home/centos/gomoneers/gomoneers --syslog
+ExecStop=/bin/bash -c "killall gomoneers"
+Restart=always
+WorkingDirectory=/home/centos/gomoneers
+
+[Install]
+WantedBy=multi-user.target
+
